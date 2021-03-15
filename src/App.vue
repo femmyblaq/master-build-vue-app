@@ -1,28 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-header v-if="!['signin', 'signup', 'help'].includes($route.name)" />
+    <router-view></router-view>
+    <app-footer v-if="!['signin', 'signup', 'help'].includes($route.name)" />
+    <!-- <app-sidebar></app-sidebar>
+    <app-header></app-header> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import appHeader from "./components/header";
+import appFooter from "../Footer/footer";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    appHeader,
+    appFooter,
+  },
+};
+// import appSidebar from "./components/layout/sidebar";
+// import appHeader from "./components/layout/header";
+// export default {
+//   components: {
+//     appSidebar,
+//     appHeader,
+//   },
+// };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>

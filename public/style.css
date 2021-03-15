@@ -1,0 +1,53 @@
+.container-fluid {
+    padding: 0 !important;
+}
+
+body {
+    background-color: #006400;
+}
+
+@media (min-width: 315px) and (max-width: 480px) {
+    .container-fluid .top-qoute {
+        padding: 20px;
+    }
+
+    .container-fluid .top-qoute p {
+        font-size: 10rem;
+    }
+
+    .container-fluid .top-qoute h3 {
+        font-size: 20rem;
+        width: 100% !important;
+    }
+
+    .project-info .col-lg-4 .steps {
+        padding-left: 10px;
+    }
+
+    .project-info .col-lg-4 .linediv {
+        position: absolute;
+        height: 600px;
+        width: 1px;
+        background-color: #ccc;
+        z-index: -1;
+        left: 6.5%;
+    }
+
+    .project-info .col-lg-4 .d-flex p {
+        color: #ccc;
+        font-size: 0.9em;
+    }
+
+    .project-info .card .form-group input,
+    .project-info .card .form-group textarea {
+        border: none;
+        background-color: #ddd;
+        border-radius: 0;
+        padding: 3px;
+    }
+
+    .project-info .card .form-group .myDropDown {
+        height: 40px;
+        overflow: auto;
+    }
+}
