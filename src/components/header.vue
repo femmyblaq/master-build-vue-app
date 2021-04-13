@@ -81,17 +81,13 @@
               >
             </li>
             <li class="navbar-item h-5 list-inline-item">
-              <router-link
-                to="/start"
-                tag="button"
-                class="btn btn-sm btn-danger px-4"
+              <router-link to="/start" class="btn btn-sm btn-danger px-4"
                 >Start A Project</router-link
               >
             </li>
             <li class=" list-inline-item">
               <router-link
                 to="/signin"
-                tag="button"
                 class="btn btn-sm btn-outline-light px-4"
                 >Sign In</router-link
               >

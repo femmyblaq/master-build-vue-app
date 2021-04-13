@@ -4,21 +4,72 @@
       <a href="/" class="d-flex justify-content-center"
         ><img src="../../../public/assets/masterbuid2.png" alt=""
       /></a>
-      <ul>
+      <ul class="list-unstyled">
         <li class="py-2">
           <a href="/dashboard" class="text-decoration-none ms-3"
             ><i class="fas fa-columns me-2"></i>Dashboard</a
           >
         </li>
         <li class="py-2">
-          <a href="/users" class="text-decoration-none ms-3"
-            ><i class="far fa-user me-2"></i>Users</a
+          <a
+            class="text-decoration-none"
+            data-bs-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
           >
+            <p class="mb-0"><i class="far fa-user me-2"></i>Users</p>
+          </a>
+
+          <ul class="collapse px-4" id="collapseExample">
+            <li>
+              <a
+                href=""
+                style="font-size: 0.7em;"
+                class="text-decoration-none text-muted"
+                >Add New User</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                style="font-size: 0.7em;"
+                class="text-decoration-none text-muted"
+                >All Users</a
+              >
+            </li>
+          </ul>
         </li>
         <li class="py-2">
-          <a href="/settings" class="text-decoration-none ms-3"
-            ><i class="fas fa-cog me-2"></i>Settings</a
+          <a
+            class="text-decoration-none"
+            data-bs-toggle="collapse"
+            href="#collapseExample2"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
           >
+            <p class="mb-0"><i class="fas fa-cog me-2"></i>Settings</p></a
+          >
+          <ul class="collapse px-4" id="collapseExample2">
+            <li>
+              <a
+                href=""
+                style="font-size: 0.7em;"
+                class="text-decoration-none text-muted"
+                >Add New User</a
+              >
+            </li>
+            <li>
+              <a
+                href=""
+                style="font-size: 0.7em;"
+                class="text-decoration-none text-muted"
+                >All Users</a
+              >
+            </li>
+          </ul>
         </li>
         <li class="py-2">
           <a href="/" class="text-decoration-none ms-3"
@@ -44,11 +95,7 @@ export default {};
   width: 270px;
   height: 100vh;
 }
-#sidebar .sidebar-content ul {
-  list-style: none;
-  width: 100%;
-  padding: 0;
-}
+
 #sidebar .sidebar-content ul li {
   width: 100%;
 }

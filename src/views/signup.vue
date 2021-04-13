@@ -15,20 +15,77 @@
             <p class=" text-center">
               have an account?
               <span class="text-decoration-underline text-danger"
-                >sign in.</span
+                ><a href="/signin">sign in.</a></span
               >
             </p>
             <form @submit.prevent="onSubmit">
-              <div class="form-group mt-2">
-                <label for="email">Email *</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Enter Your Email"
-                  v-model="email"
-                />
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="name">First Name *</label>
+                  <input
+                    type="name"
+                    class="form-control"
+                    placeholder="Name"
+                    v-model="firstName"
+                  />
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="email">Last Name *</label>
+                  <input
+                    type="name"
+                    class="form-control"
+                    placeholder="Last Name"
+                    v-model="lastName"
+                  />
+                </div>
+                <div class="col-md-6 form-group mt-2">
+                  <label for="email">UserName *</label>
+                  <input
+                    type="name"
+                    class="form-control"
+                    placeholder="Enter Your Email"
+                    v-model="userName"
+                  />
+                </div>
+                <div class="col-md-6 form-group mt-2">
+                  <label for="email">phone Number *</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Enter Your Number"
+                    v-model="phoneNumber"
+                  />
+                </div>
+                <div class="col-md-12 form-group mt-2">
+                  <label for="email">Email *</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter Your Email"
+                    v-model="email"
+                  />
+                </div>
+                <div class="col-md-6 form-group mt-2">
+                  <label>Password *</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Enter Password"
+                    v-model="password"
+                  />
+                </div>
+                <div class="col-md-6 form-group mt-2">
+                  <label>Comfirm Password *</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Confirm Password"
+                    v-model="confirmPassword"
+                  />
+                </div>
               </div>
-              <div class="form-group mt-2">
+
+              <!-- <div class="form-group mt-2">
                 <label>Age *</label>
                 <input
                   type="number"
@@ -36,84 +93,7 @@
                   placeholder="Age"
                   v-model="age"
                 />
-              </div>
-              <div class="form-group mt-2">
-                <label>Password *</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  placeholder="Enter Password"
-                  v-model="password"
-                />
-              </div>
-              <div class="form-group mt-2">
-                <label>Comfirm Password *</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  placeholder="Confirm Password"
-                  v-model="confirmPassword"
-                />
-              </div>
-
-              <div class="form-group mt-2">
-                <label for="Country">Country</label>
-
-                <select
-                  id="country"
-                  v-model="country"
-                  class="form-select form-select-sm"
-                  aria-label=".form-select-sm"
-                >
-                  <option selected>USA</option>
-                  <option value="india">India</option>
-                  <option value="uk">UK</option>
-                  <option value="germany">Germany</option>
-                  <option value="nigeria">Nigeria</option>
-                  <option value="Ghana">Ghana</option>
-                </select>
-              </div>
-              <div class="hobbies mt-2">
-                <h6>Add some Hobbies</h6>
-                <button
-                  class="br-0 btn btn-success"
-                  @click="onAddHobby"
-                  type="button"
-                >
-                  Add Hobby
-                </button>
-                <div class="hobby-list my-3">
-                  <div
-                    class="input"
-                    v-for="(hobbyInput, index) in hobbyInputs"
-                    :key="hobbyInput.id"
-                  >
-                    <label :for="hobbyInput.id">Hobby #{{ index + 1 }}</label>
-                    <input
-                      type="text"
-                      class="m-2"
-                      :id="hobbyInput.id"
-                      v-model="hobbyInput.value"
-                    />
-                    <button
-                      class="btn btn-danger btn-small px-1 py-0 ms-2"
-                      @click="onDeleteHobby(hobbyInput.id)"
-                      type="button"
-                    >
-                      X
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex align-items-center mt-2">
-                <input
-                  type="checkbox"
-                  id="terms"
-                  class=" me-2"
-                  v-model="terms"
-                />
-                <label for="terms">Accept Terms of Use</label>
-              </div>
+              </div> -->
               <button
                 type="submit"
                 class="btn btn-success btn-block w-100 mt-4"
@@ -129,40 +109,56 @@
 </template>
 
 <script>
+import Vue from "vue";
 export default {
   data() {
     return {
-      email: "",
-      age: null,
+      firstName: "",
+      lastName: "",
+      userName: "",
+      phoneNumber: null,
+      email: "femmyhy@gmail.com",
       password: "",
       confirmPassword: "",
-      hobbyInputs: [],
-      country: "",
-      terms: false,
+      showAlert: false,
     };
   },
   methods: {
-    onAddHobby() {
-      const newHobby = {
-        id: Math.random() * Math.random() * 1000,
-        value: "",
-      };
-      this.hobbyInputs.push(newHobby);
-    },
-    onDeleteHobby(id) {
-      this.hobbyInputs = this.hobbyInputs.filter((hobby) => hobby.id !== id);
-    },
-    onSubmit() {
-      const formData = {
-        email: this.email,
-        age: this.age,
-        password: this.password,
-        comfirmPassword: this.confirmPassword,
-        country: this.country,
-        hobbyInputs: this.hobbyInputs.map((hobby) => hobby.value),
-        terms: this.terms,
-      };
-      console.log(formData);
+    async onSubmit() {
+      try {
+        const formData = {
+          first_name: this.firstName,
+          last_name: this.lastName,
+          username: this.userName,
+          phone_no: this.phoneNumber,
+          email: this.email,
+          password: this.password,
+          comfirmPassword: this.confirmPassword,
+        };
+        console.log(formData);
+        const response = await this.$store.dispatch("signUp", formData);
+        console.log("HHHH", response);
+
+        this.$notify({
+          group: "foo",
+          title: "Sucessful",
+          type: "sucess",
+          text: response.message,
+        });
+        this.$swal({
+          icon: "success",
+          text:
+            "Your Registration was successful, kindly activate your account via email!!",
+          showConfirmButton: false,
+        });
+      } catch (error) {
+        this.$notify({
+          group: "foo",
+          title: "Error",
+          type: "error",
+          text: error.message,
+        });
+      }
     },
   },
 };

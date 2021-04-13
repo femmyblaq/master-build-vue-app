@@ -127,10 +127,7 @@
                     class="form-control"
                   ></textarea>
                 </div>
-                <div class="form-control">
-                  <input type="file" id="myFile" name="filename" />
-                  <input type="submit" />
-                </div>
+                <div class="btn btn-danger" type="submit">Submit</div>
               </form>
             </div>
           </div>

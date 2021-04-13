@@ -1,42 +1,47 @@
 <template>
-  <!-- <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent fixed-top">
+  <div class="container-fluid">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top main-navigation"
+    >
       <div class="container-fluid px-4">
         <a class="navbar-brand" href="#"
           ><img src="../../../image/masterbuid.png" class="w-70 h-70" alt=""
         /></a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!-- <--overlay backgroind-->
+        -->
+        <div class="overlay d-lg-none"></div>
+        <div
+          class="order-lg-2 bg-dark d-lg-flex w-100  pb-3 pb-lg-0 sidebar"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav ms-lg-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a
+                class="nav-link px3 px-lg-2 active"
+                aria-current="page"
+                href="#"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">How To Pay</a>
+              <a class="nav-link px-lg-2 px-lg-2" href="#">How To Pay</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up</a>
+              <a class="nav-link px-lg-2 px-lg-2" href="#">Sign Up</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign In</a>
+              <a class="nav-link px-lg-2 px-lg-2" href="#">Sign In</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-  </div> -->
-  <div class="container-fluid">
+  </div>
+  <!-- <div class="container-fluid">
     <div class="navbar">
       <div class="navbar d-flex align-items-center">
         <div
@@ -98,7 +103,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -106,6 +111,32 @@ export default {};
 </script>
 
 <style scoped>
+.sidebar,
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+.sidebar {
+  left: -100%;
+  max-width: 300px;
+  transition: all ease 0.25s;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+}
+.main-navigation.active .sidebar {
+  left: 0;
+}
+.main-navigation.active .overlay {
+  visibility: visible;
+}
 .navbar {
   display: grid;
   grid-template-columns: 1fr;

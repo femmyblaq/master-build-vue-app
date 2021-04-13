@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-    <app-header v-if="!['signin', 'signup', 'help'].includes($route.name)" />
+    <app-header
+      v-if="!['Signin', 'Signup', 'Dashboard', 'help'].includes($route.name)"
+    />
     <router-view></router-view>
-    <app-footer v-if="!['signin', 'signup', 'help'].includes($route.name)" />
+    <app-footer
+      v-if="!['Signin', 'Signup', 'Dashboard', 'help'].includes($route.name)"
+    />
+    <notifications group="foo" :max="1" />
     <!-- <app-sidebar></app-sidebar>
     <app-header></app-header> -->
   </div>
@@ -10,7 +15,7 @@
 
 <script>
 import appHeader from "./components/header";
-import appFooter from "../Footer/footer";
+import appFooter from "./components/Footer/footer";
 
 export default {
   components: {
